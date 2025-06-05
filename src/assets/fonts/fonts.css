@@ -1,0 +1,40 @@
+/* Netflix Fonts */
+@font-face {
+  font-family: "Netflix Sans";
+  src: url("./NetflixSans-Regular.woff2") format("woff2"), url("./NetflixSans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  src: url("./NetflixSans-Light.woff2") format("woff2"), url("./NetflixSans-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  src: url("./NetflixSans-Medium.woff2") format("woff2"), url("./NetflixSans-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  src: url("./NetflixSans-Bold.woff2") format("woff2"), url("./NetflixSans-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("./BebasNeue-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
