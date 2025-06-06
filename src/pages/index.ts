@@ -1,3 +1,4 @@
 // Export all pages
 export { HomePage } from './home';
-export { LoginPage } from './auth';
+export { SignupPage } from './auth/SignupPage';
+export { SigninPage } from './auth/SigninPage';

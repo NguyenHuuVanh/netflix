@@ -10,3 +10,9 @@ export { FontDemo } from './common/FontDemo';
 export { ColorDemo } from './common/ColorDemo';
 export { NetflixLogo } from './common/NetflixLogo';
 export { TailwindTest } from './common/TailwindTest';
+
+// Icon System exports
+export * from './icons/index';
+// Image System exports
+export * from './images/index';
+export { default as ImageSystemDemo } from './images/ImageSystemDemo';

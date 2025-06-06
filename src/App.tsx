@@ -1,14 +1,15 @@
 import { AuthProvider } from './contexts';
-import { HomePage } from './pages';
-import { FontChecker } from './components/common/FontChecker';
 import './App.css';
+import { SignupPage } from './pages/auth';
 
 function App() {
   return (
     <AuthProvider>
       <div className="app">
-        <FontChecker />
-        <HomePage />
+        <SignupPage />
+        {/* <FontChecker />
+        <ImageSystemDemo />
+        <HomePage /> */}
       </div>
     </AuthProvider>
   );

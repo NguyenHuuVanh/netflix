@@ -1,39 +1,28 @@
-import React from 'react';
-import { netflixClasses, cn } from '../../utils/tailwind';
+import React from "react";
 
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  variant?: 'primary' | 'secondary' | 'outline';
   className?: string;
-  type?: 'button' | 'submit' | 'reset';
+  type?: "button" | "submit" | "reset";
   disabled?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   children,
   onClick,
-  variant = 'primary',
-  className = '',
-  type = 'button',
-  disabled = false
+  className = "",
+  type = "button",
+  disabled = false,
 }) => {
   const getButtonClasses = () => {
-    const baseClasses = netflixClasses.button[variant];
-    const disabledClasses = disabled 
-      ? 'opacity-50 cursor-not-allowed' 
-      : '';
-    
-    return cn(baseClasses, disabledClasses, className);
+    const disabledClasses = disabled ? "opacity-50 cursor-not-allowed" : "";
+
+    return `${className} ${disabledClasses}`.trim();
   };
 
   return (
-    <button
-      type={type}
-      onClick={disabled ? undefined : onClick}
-      disabled={disabled}
-      className={getButtonClasses()}
-    >
+    <button type={type} onClick={disabled ? undefined : onClick} disabled={disabled} className={getButtonClasses()}>
       {children}
     </button>
   );

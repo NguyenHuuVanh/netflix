@@ -1,75 +1,109 @@
-/* TailwindCSS Directives */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui";
 
-/* Netflix Base Styles */
-:root {
-  font-family: "Netflix Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+@theme {
+  /* Primary Colors */
+  --color-primary: #e50914;
+  --color-primary-red: #e50914;
+  --color-primary-white: #ffffff;
+  --color-primary-black: #000000;
+
+  /* Secondary Colors */
+  --color-secondary-red-100: #eb3942;
+  --color-secondary-red-200: #c11119;
+  --color-secondary-red-300: #f50723;
+  --color-secondary-blue-100: #0071eb;
+  --color-secondary-blue-200: #448ef4;
+  --color-secondary-blue-300: #54b9c5;
+  --color-secondary-green: #46d369;
+
+  /* Grey Scale */
+  --color-grey-10: #e5e5e5;
+  --color-grey-20: #dcdcdc;
+  --color-grey-25: #d2d2d2;
+  --color-grey-50: #bcbcbc;
+  --color-grey-100: #b3b3b3;
+  --color-grey-150: #979797;
+  --color-grey-200: #808080;
+  --color-grey-250: #777777;
+  --color-grey-300T40: rgba(109, 109, 109, 0.4);
+  --color-grey-300T70: rgba(109, 109, 109, 0.7);
+  --color-grey-350: #545454;
+  --color-grey-400: #414141;
+  --color-grey-450: #404040;
+  --color-grey-500: #3a3a3a;
+  --color-grey-550: #363636;
+  --color-grey-600T60: rgba(51, 51, 51, 0.6);
+  --color-grey-600: #333333;
+  --color-grey-650: #2f2f2f;
+  --color-grey-700: #2a2a2a;
+  --color-grey-750: #262626;
+  --color-grey-800: #232323;
+  --color-grey-850: #181818;
+  --color-grey-900: #141414;
+
+  /* Transparent White */
+  --color-white-15: rgba(255, 255, 255, 0.15);
+  --color-white-20: rgba(255, 255, 255, 0.2);
+  --color-white-30: rgba(255, 255, 255, 0.3);
+  --color-white-35: rgba(255, 255, 255, 0.35);
+  --color-white-50: rgba(255, 255, 255, 0.5);
+  --color-white-70: rgba(255, 255, 255, 0.7);
+
+  /* Transparent Black */
+  --color-black-30: rgba(0, 0, 0, 0.3);
+  --color-black-60: rgba(0, 0, 0, 0.6);
+  --color-black-90: rgba(0, 0, 0, 0.9);
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-card: 8px;
+
+  /* Box Shadows */
+  --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+  /* Font Families */
+  --font-family-primary: "Netflix Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
     sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: dark;
-  color: #ffffff;
-  background-color: #141414;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --font-family-heading: "Bebas Neue", "Netflix Sans", Arial, sans-serif;
+  --font-family-display: "Bebas Neue", Impact, "Arial Black", sans-serif;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer components {
+  .btn-primary-small {
+    @apply bg-primary-red flex items-center justify-center px-4 py-1 min-w-[77px] h-[32px] ease-[cubic-bezier(0.4,0,0.68,0.06)] hover:ease-[cubic-bezier(0.32,0.94,0.6,1)] 
+                  hover:bg-secondary-red-200 font-medium align-text-top text-sm rounded-sm cursor-pointer relative border-0 duration-[.250ms] text-white hover:shadow-[0_4_4_0px_rgba(255,255,255,0.25)];
   }
-  a:hover {
-    color: #747bff;
+
+  .btn-primary-large {
+    @apply bg-primary-red flex items-center justify-center px-6 py-3 text-[16px] h-10 min-w-[314px] ease-[cubic-bezier(0.4,0,0.68,0.06)] hover:ease-[cubic-bezier(0.32,0.94,0.6,1)] 
+                  hover:bg-secondary-red-200 font-medium align-text-top rounded-sm cursor-pointer relative border-0 duration-[.250ms] text-white hover:shadow-[0_4_4_0px_rgba(255,255,255,0.25)];
   }
-  button {
-    background-color: #f9f9f9;
+
+  .btn-default {
+    @apply bg-white-20 flex items-center justify-center px-6 py-3 text-[16px] h-10 min-w-[314px] ease-[cubic-bezier(0.4,0,0.68,0.06)] hover:ease-[cubic-bezier(0.32,0.94,0.6,1)] hover:bg-white-15
+             font-medium align-text-top rounded-sm cursor-pointer relative border-0 duration-[.250ms] text-white hover:shadow-[0_4_4_0px_rgba(255,255,255,0.25)];
+  }
+
+  .btn-primary-medium {
+    @apply bg-primary-red flex items-center justify-center gap-4 px-4 py-1 min-w-[208px] h-[56px] ease-[cubic-bezier(0.4,0,0.68,0.06)] hover:ease-[cubic-bezier(0.32,0.94,0.6,1)] 
+                  hover:bg-secondary-red-200 font-medium align-text-top text-2xl  rounded-sm cursor-pointer relative border-0 duration-[.250ms] text-white hover:shadow-[0_4_4_0px_rgba(255,255,255,0.25)];
+  }
+
+  .btn-grey-default {
+    @apply flex items-center justify-center gap-4 px-4 py-1 border-[1px] border-solid text-grey-20 border-grey-200 min-w-[178px] h-[40px] ease-[cubic-bezier(0.4,0,0.68,0.06)] hover:ease-[cubic-bezier(0.32,0.94,0.6,1)] hover:text-primary-white hover:border-primary-white will-change-auto
+           font-medium align-text-top text-[17px] cursor-pointer relative border-0 duration-[.250ms] hover:shadow-[0_4_4_0px_rgba(255,255,255,0.25)];
+  }
+
+  .input-primary {
+    @apply px-4 py-[18px] h-[56px] rounded-sm border border-solid border-grey-200 text-[16px] leading-[1.5] font-normal text-primary-white focus-visible:border-grey-50 focus-visible:outline outline-white focus-visible:outline-2;
+  }
+
+  .input-netflix {
+    @apply bg-grey-800 border border-grey-600 text-primary-white px-4 py-3 rounded-sm placeholder:text-grey-250 focus:border-primary outline-none transition-colors duration-200;
   }
 }
